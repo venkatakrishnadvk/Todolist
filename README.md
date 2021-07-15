@@ -11,9 +11,10 @@ Server                 : XAMPP Server
 
 
 Database details:
+
 Create a database called todolist.
 
-create a table called tasks with fields shown below.
+Create a table called tasks with fields shown below.
 
 id - int(10) Primary Key
 
