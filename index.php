@@ -9,19 +9,21 @@
          function deleteAllCookies() {
          var cookies = document.cookie.split(";");
          
-        function deleteAllCookies() {
+         function deleteAllCookies() {
             var cookies = document.cookie.split(";");
-
+         
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i];
                 var eqPos = cookie.indexOf("=");
                 var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
                 document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
             }
-        }
-          function myFunction() {
-              alert("Task modified successfully");
-            }
+         }
+      </script> 
+      <script>
+         function myFunction() {
+             alert("Task modified successfully");
+           }
       </script>
    </head>
    <body>
@@ -41,31 +43,28 @@
             <input type="text" name="task" class="task" id="task" placeholder="Add a new Task">
             <button type="submit" name="submit" class="btn">Add Task</button>
          </div>
-          
          <?php if(isset($_GET['edit'])) :
-             $edit = $_GET['edit'];
-             $query = "SELECT * FROM tasks WHERE id = $edit ";
-             $result = mysqli_query($db, $query);
-             while($row = mysqli_fetch_assoc($result)) {
-                  $id = $row['id'];
-         ?>
-                 <div class="input-group" >
-                    <input type="text" class="edit" id="edit" name="edit" placeholder="Modify Task">
-                    <button type="submit" name="update" class="btn" onclick="myFunction()">Update</button>
-                 </div>
-
-              <?php
-                 if (isset($_POST['update'])) {
-                     $task = $_POST['edit'];
-                     $query = "update tasks set task = '$task' where id = '$id' ";
-                     $run_query = mysqli_query($db, $query);
-                     
-                      header('location: index.php');
-                  
-                 }
-         } endif; ?>
+            $edit = $_GET['edit'];
+            $query = "SELECT * FROM tasks WHERE id = $edit ";
+            $result = mysqli_query($db, $query);
+            while($row = mysqli_fetch_assoc($result)) {
+                 $id = $row['id'];
+            ?>
+         <div class="input-group" >
+            <input type="text" class="edit" id="edit" name="edit" placeholder="Modify Task">
+            <button type="submit" name="update" class="btn" onclick="myFunction()">Update</button>
+         </div>
+         <?php
+            if (isset($_POST['update'])) {
+                $task = $_POST['edit'];
+                $query = "update tasks set task = '$task' where id = '$id' ";
+                $run_query = mysqli_query($db, $query);
+                
+                 header('location: index.php');
+             
+            }
+            } endif; ?>
       </form>
-      
       <table>
          <thead>
             <tr>
