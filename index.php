@@ -26,7 +26,9 @@
    </head>
    <body>
       <form method="post" action="">
-         <?php $db = mysqli_connect("localhost", "root","", "todo") or die("query failed" .mysqli_error($db)); ?>
+         <?php $db = mysqli_connect("localhost", "root","", "todolist") or die("query failed" .
+                                                                               
+                                                                               _error($db)); ?>
          <?php
             if (isset($_POST['submit'])) {
                 $task = $_POST['task'];
