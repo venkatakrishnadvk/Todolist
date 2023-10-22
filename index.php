@@ -2,6 +2,7 @@
 <html>
    <head>
       <title>ToDoList</title>
+      <title>ToDoListByDVK</title>
       <link rel="stylesheet" type="text/css" href="style.css">
       <meta name='viewport' content='width=device-width, initial-scale=1'>
       <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
