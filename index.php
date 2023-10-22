@@ -3,6 +3,7 @@
    <head>
       <title>ToDoList</title>
       <title>ToDoListByDVK</title>
+      <title>ToDoListByVenkat</title>
       <link rel="stylesheet" type="text/css" href="style.css">
       <meta name='viewport' content='width=device-width, initial-scale=1'>
       <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -12,12 +13,13 @@
          
          function deleteAllCookies() {
             var cookies = document.cookie.split(";");
-         
+
             for (var i = 0; i < cookies.length; i++) {
                 var cookie = cookies[i];
                 var eqPos = cookie.indexOf("=");
                 var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
                 document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+//                 This is Venkat
             }
          }
       </script> 
